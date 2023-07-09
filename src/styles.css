@@ -182,6 +182,13 @@ img {
   max-height: calc(100vh - 24px);
 }
 
+button{
+  padding: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+}
+
 /*
 * Стили компонента Buton (Load more)
 */
@@ -196,6 +203,7 @@ img {
   color: #fff;
   border: 0;
   text-decoration: none;
+  width: fit-content;
   cursor: pointer;
   font-family: inherit;
   font-size: 18px;
