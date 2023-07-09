@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class SearchBar extends Component {
   static propTypes = {
-    onSubmit: PropTypes.func,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   state = {

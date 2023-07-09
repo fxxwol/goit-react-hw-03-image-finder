@@ -4,7 +4,6 @@ import { fetchImg } from 'service/fetchImg';
 import Loader from '../components/Loader';
 import ImageGalleryItem from './ImageGalleryItem';
 import Button from './Button';
-import Modal from './Modal';
 
 export default class ImageGallery extends Component {
   static propTypes = {
