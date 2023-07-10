@@ -28,10 +28,6 @@ export default class App extends Component {
       this.setState({ status: 'pending', page: 1 });
       this.getData(1);
     }
-
-    if (prevState.gallery !== this.state.gallery) {
-      this.isLoading = true;
-    }
   }
 
   getData = async page => {
@@ -80,23 +76,21 @@ export default class App extends Component {
   };
 
   render() {
-    const {status, page, totalPages, error} = this.state
+    const { status, page, totalPages, error, gallery, showModal, selectedImg } =
+      this.state;
     return (
       <div className="App">
         <SearchBar onSubmit={this.handleSearch} />
         {status === 'pending' && <Loader />}
         {status === 'resolved' && (
           <>
-            <ImageGallery
-              gallery={this.state.gallery}
-              onModalClick={this.toggleModal}
-            />
+            <ImageGallery gallery={gallery} onModalClick={this.toggleModal} />
             {!(page === totalPages) && <Button onClick={this.loadMore} />}
           </>
         )}
         {status === 'rejected' && <h1>{error.message}</h1>}
-        {this.state.showModal && (
-          <Modal img={this.state.selectedImg} toggleModal={this.toggleModal} />
+        {showModal && (
+          <Modal img={selectedImg} toggleModal={this.toggleModal} />
         )}
         <ToastContainer autoClose={3000} theme="colored" />
       </div>
