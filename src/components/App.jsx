@@ -98,7 +98,7 @@ export default class App extends Component {
         {this.state.showModal && (
           <Modal img={this.state.selectedImg} toggleModal={this.toggleModal} />
         )}
-        <ToastContainer autoClose={80000} theme="colored" />
+        <ToastContainer autoClose={3000} theme="colored" />
       </div>
     );
   }
