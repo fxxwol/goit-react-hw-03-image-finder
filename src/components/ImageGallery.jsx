@@ -24,7 +24,7 @@ export default class ImageGallery extends Component {
     const currentQuery = this.props.query;
 
     if (prevQuery !== currentQuery) {
-      this.setState({ status: 'pending' });
+      this.setState({ status: 'pending', page: 1 });
       this.getData(1);
     }
 
